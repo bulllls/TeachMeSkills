@@ -6,17 +6,17 @@ enum PlayingCard: String, CaseIterable {
     case gloves = "♣︎", diamonds = "♦︎", hearts = "♥︎", spades = "♠︎"
 }
 
-enum AllCards: Int, CaseIterable {
+enum VoidCard: Int, CaseIterable {
     case Two = 2, Three, Four, Five, Six, Seven, Eight, Nine, Ten, Jack, Queen, King, Ace
 }
-print(AllCards.Ten.rawValue)
+print(VoidCard.Ten.rawValue)
 
 
 //    2. Создать структуру Карта, со свойствами масть/значение.
 
 struct Card {
     var suit: PlayingCard
-    let val: AllCards
+    let val: VoidCard
     
     //    4. Сделать у карты переменную, возвращающую описание в виде ("Ace of ♠︎") (вот значки остальных мастей ♣︎, ♥︎, ♦︎)
     var description: String {
@@ -55,7 +55,7 @@ cardOne.description
 //    6*. Создать переменную deck, в которой будет храниться массив из всех 52х карт
 var deck = [Card]()
 for suit in PlayingCard.allCases {
-    for val in AllCards.allCases {
+    for val in VoidCard.allCases {
         deck.append(Card(suit: suit, val: val))
     }
 }
