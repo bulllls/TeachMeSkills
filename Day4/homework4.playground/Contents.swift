@@ -101,11 +101,17 @@ class Bank {
     //4*. Добавьте для Банка методы пополнения аккаунта по номеру на указанную в методе сумму и снятия суммы с указанного по номеру аккаунта (в методы передавать номер аккаунта, а не весь аккаунт)
 
     func plusBalance(sum: Double, num: Int) {
-        
         for client in clients {
             if client.accountNumber() == num {
                 client.deposit(balance: sum)
-                break
+            }
+        }
+    }
+    
+    func minBalance(sum: Double, num: Int) {
+        for client in clients {
+            if client.accountNumber() == num {
+                client.withdraw(balance: sum)
             }
         }
     }
