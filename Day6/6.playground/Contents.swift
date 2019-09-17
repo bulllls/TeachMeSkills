@@ -107,7 +107,7 @@ func mid<T: Comparable>(array: [T]) -> T? { //Comparable
 }
 
 //
-//mid(array: [3, 5, 1, 2, 4])
+mid(array: [3, 5, 1, 2, 4])
 
 protocol Summable {
   static func +(lhs: Self, rhs: Self) -> Self
