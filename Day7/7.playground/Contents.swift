@@ -51,7 +51,7 @@ let chaining = results.flatMap { $0 }
 // 1. Optionals can be nil or have a value
 // 2. You need to unwrap optionals to safely use them
 
-let name: String? = nil
+let name: String? = nil ?? "Tolic"
 print(name)
 
 
