@@ -49,11 +49,11 @@ struct Person {
     let classPerson: classPerson //(всего может быть 5 классов персонажей: warrior, hunter, mage, priest, rogue).
 }
 
-let P1 = Person(name: "User1", weapon: epicCrossbow, classPerson: )
-let P2 = Person(name: "User2", weapon: escalibur, classPerson: "hunter")
-let P3 = Person(name: "User3", weapon: epicCrossbow, classPerson: "warrior")
-let P4 = Person(name: "User4", weapon: epicCrossbow, classPerson: "warrior")
-let P5 = Person(name: "User5", weapon: escalibur, classPerson: "hunter")
+let P1 = Person(name: "User1", weapon: epicCrossbow, classPerson: classPerson.hunte)
+let P2 = Person(name: "User2", weapon: escalibur, classPerson: classPerson.hunte)
+let P3 = Person(name: "User3", weapon: epicCrossbow, classPerson: classPerson.warrior)
+let P4 = Person(name: "User4", weapon: epicCrossbow, classPerson: classPerson.warrior)
+let P5 = Person(name: "User5", weapon: escalibur, classPerson: classPerson.hunte)
 
 //Создайте струкртуру Party, которая содержит несколько персонажей.
 struct Party {
@@ -70,7 +70,8 @@ struct Party {
     
         //либо по attackPower их оружия.
     func sortAttackPower() -> [Person] {
-        return party.sorted{$0.weapon.attackPower < $1.weapon.attackPower}
+        //return party.sorted{$0.weapon.attackPower < $1.weapon.attackPower}
+        return party.filter{$0.name}
     }
    
     //Добавьте возможность вернуть только персонажей с attackPower больше чем некоторое значение.
@@ -158,12 +159,10 @@ let compactMapped: [Int] = possibleNumbers.compactMap { str in Int(str) }
 print(mapped, compactMapped)
 
 
-//а почему бы для классов не использовать enum?
+
 //для фильтра по силе атаки можно было бы использовать filter.
 //func sortWeapen(rangedWeapon: Bool, meleeWeapon: Bool) -> [Person]
 //эта функция имеет слишком много вариантов, лучше переписать ее как две отдельные функции, или передавать один параметр (например тип оружия).
 //ну и да, здесь тоже предполагалось использование высших функций
-//
 ////Скомбинируйте две предыдущие функции чтобы получить персонажей только ближнего/дальнего боя и attackPower больше или меньше некоторого значения.
-//
 //ну и здесь код уже сложно читать, ты упустил самое главное слово в задании - скомбинируйте. если ты обратишь внимание - у тебя код повторяется в нескольких местах, а это самое плохое что может быть
